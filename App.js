@@ -5,6 +5,7 @@ import * as firebase from 'firebase';
 firebase.initializeApp(firebaseConfig);
 import {Text} from 'react-native-elements';
 import GuestNavigation from './navigations/guest';
+import loggedNavigation from './navigations/logged';
 import RestaurantEmpty from './components/restaurant/RestaurantEmpty'
 
 
@@ -42,13 +43,12 @@ export default class App extends React.Component {
     }
 
     if(!isLogged){
-      return(<RestaurantEmpty text = "no hay restaurantes"/>)
+      return(<loggedNavigation/>)
     }
     else{
       return(<GuestNavigation/>)
     }
-
-    
+ 
   }
 }
 
