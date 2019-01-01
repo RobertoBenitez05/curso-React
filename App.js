@@ -3,11 +3,10 @@ import PreLoader from './components/PreLoader';
 import firebaseConfig from './utils/firebase';
 import * as firebase from 'firebase';
 firebase.initializeApp(firebaseConfig);
-
-
-import {Text} from 'react-native-elements'
-
+import {Text} from 'react-native-elements';
 import GuestNavigation from './navigations/guest';
+import RestaurantEmpty from './components/restaurant/RestaurantEmpty'
+
 
 export default class App extends React.Component {
   constructor(){
@@ -38,11 +37,12 @@ export default class App extends React.Component {
   render() {
 
     const {isLogged,loaded}= this.state;
-    /*if(! loaded){
+    if(! loaded){
      return(<PreLoader/>);
-    }*/
-    if(isLogged){
-      return(<Text>Logeado</Text>)
+    }
+
+    if(!isLogged){
+      return(<RestaurantEmpty text = "no hay restaurantes"/>)
     }
     else{
       return(<GuestNavigation/>)
