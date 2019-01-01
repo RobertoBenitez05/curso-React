@@ -18,7 +18,7 @@ export default class Restaurants extends Component {
             restaurant_logo: require('../../assets/images/logoAnimeGenerico ')
         };
 
-        this.refRestaurants = firebase.database().ref().child('restaurants';)
+        this.refRestaurants = firebase.database().ref().child('restaurants');
     }
 
     
