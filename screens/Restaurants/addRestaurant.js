@@ -27,13 +27,13 @@ export default class AddRestaurant extends Component{
 
     }
     onChange (restaurant) {
-        this.state({restaurant})
+        this.setState({restaurant});
     }
     render () {
         const {restaurant} = this.state;
 
         return (
-            <BackgroundImage source = {require ('../../assets/images/iconoCoco.png')}>
+            <BackgroundImage source = {require('../../assets/images/iconoCoco.png')}>
                 <View style = {styles.container}>
                     <Card title = "formulario de restaurantes chidos">
                         <View>
