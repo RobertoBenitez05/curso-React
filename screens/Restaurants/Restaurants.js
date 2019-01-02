@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import BackgroundImage from "../../components/BackgroundImage"
 import PreLoader from '../../components/PreLoader';
-import {styleSheet, FlatList} from 'react-native';
+import {StyleSheet, FlatList} from 'react-native';
 import {ListItems} from "react-native-elements"
 import firebaseConfig from '../../utils/firebase';
 import * as firebase from 'firebase';
@@ -72,14 +72,12 @@ export default class Restaurants extends Component {
     render() {
         const {loaded, restaurants} = this.state;
 
-        if(!loaded) {
-          return <PreLoader/>  
-        };
+       
 
         if(!restaurants.length){
             return(
                 <BackgroundImage source = {require('../../assets/images/susu2.jpg')}>
-                    <RestaurantEmptytext text = "No Hay Restaurantes kawais"/>
+                    <RestaurantEmpty text = "No Hay Restaurantes kawais"/>
                     <RestaurantAddButton addRestaurant = {this.addRestaurant.bind(this)} />
 
                 </BackgroundImage>   

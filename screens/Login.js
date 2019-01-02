@@ -8,6 +8,7 @@ import { Card } from 'react-native-elements';
 const Form = t.form.Form;
 import * as  firebase from 'firebase';
 import Toast from 'react-native-simple-toast';
+import LoggedNavigation from '../navigations/logged'
 
 export default class Login extends Component {
     constructor() {
@@ -42,6 +43,7 @@ export default class Login extends Component {
             firebase.auth().signInWithEmailAndPassword(validate.email,validate.password)
             .then(()=>{
                 Toast.showWithGravity("Bienvenido",Toast.LONG,Toast.BOTTOM);
+                return(<LoggedNavigation/>)
             })
             .catch((error) =>{
                 const errorCode = error.code;

@@ -7,7 +7,7 @@ export default class PreLoader extends Component{
     render(){
         return(
             <View style={[styles.preloader]} >
-                <ActivityIndicator style={{height:80}} size="large" ></ActivityIndicator>
+                <ActivityIndicator style={{height:80}} size="large" />
             </View>
         )
     }
@@ -22,4 +22,4 @@ const styles = StyleSheet.create({
         height: height,
         backgroundColor:'#242935'
     }
-})
+});

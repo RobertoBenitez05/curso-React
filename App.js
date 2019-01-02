@@ -5,9 +5,10 @@ import * as firebase from 'firebase';
 firebase.initializeApp(firebaseConfig);
 import {Text} from 'react-native-elements';
 import GuestNavigation from './navigations/guest';
-import loggedNavigation from './navigations/logged';
+import LoggedNavigation from './navigations/logged';
 import RestaurantEmpty from './components/restaurant/RestaurantEmpty'
 
+console.disableYellowBox = true;
 
 export default class App extends React.Component {
   constructor(){
@@ -42,8 +43,8 @@ export default class App extends React.Component {
      return(<PreLoader/>);
     }
 
-    if(!isLogged){
-      return(<loggedNavigation/>)
+    if(isLogged){
+      return(<LoggedNavigation/>)
     }
     else{
       return(<GuestNavigation/>)
