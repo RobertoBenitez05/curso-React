@@ -45,8 +45,8 @@ export default class Restaurants extends Component {
     }
 
     addRestaurant(){
-        const navigateAction = navigateAction.navigate({
-            routName : 'AssRestaurant'
+        const navigateAction = navigationAction.navigate({
+            routName : 'AddRestaurant'
         });
         this.props.navigattion.dispatch(navigateAction);
     }
@@ -72,9 +72,7 @@ export default class Restaurants extends Component {
     render() {
         const {loaded, restaurants} = this.state;
 
-        if(!loaded) {
-          return <PreLoader/>  
-        };
+       
 
         if(!restaurants.length){
             return(

@@ -1,5 +1,6 @@
 import React from 'react';
 import RestaurantsScreen from "../screens/Restaurants/Restaurants";
+import LogoutScreen from "../screens/Logout";
 import {DrawerNavigator, StackNavigator} from "react-navigation";
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -50,10 +51,24 @@ const restaurantsScreenStack = StackNavigator(
     navigationOptions
 );
 
+const LogoutScreenStack = StackNavigator({
+    LogoutScreen: {
+        screen: LogoutScreen,
+        navigationOptions: ({navigation}) => ({
+            title: 'Cerrar sesion',
+            drawerIcon: ({tintColor}) => (<Icon name= "sign-out" size= {24} style= {{color:tintColor}}/>),
+        })
+    }
+
+});
+
 export default DrawerNavigator(
     {
         RestaurantsScreen:{
             screen: restaurantsScreenStack
+        },
+        LogoutScreen:{
+            screen: LogoutScreenStack
         }
     },
     {
