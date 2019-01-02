@@ -20,7 +20,6 @@ export default class App extends React.Component {
   }
 
   async componentDidMount(){
-    //firebase.auth().signOut();
     await firebase.auth().onAuthStateChanged((user) =>{
       if(user !== null ){
         this.setState({
@@ -39,9 +38,8 @@ export default class App extends React.Component {
   render() {
 
     const {isLogged,loaded}= this.state;
-    if(! loaded){
-     return(<PreLoader/>);
-    }
+
+    
 
     if(isLogged){
       return(<LoggedNavigation/>)

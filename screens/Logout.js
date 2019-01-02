@@ -2,7 +2,7 @@ import React , {Component} from 'react';
 import * as firebase from 'firebase';
 import Toast from 'react-native-simple-toast';
 
-export class Logout extends Component{
+export default class Logout extends Component{
     componentDidMount(){
         firebase.auth().signOut()
         .then(() => {
