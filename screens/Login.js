@@ -43,7 +43,7 @@ export default class Login extends Component {
             firebase.auth().signInWithEmailAndPassword(validate.email,validate.password)
             .then(()=>{
                 Toast.showWithGravity("Bienvenido",Toast.LONG,Toast.BOTTOM);
-                return(<LoggedNavigation/>)
+               
             })
             .catch((error) =>{
                 const errorCode = error.code;

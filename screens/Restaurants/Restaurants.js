@@ -72,7 +72,9 @@ export default class Restaurants extends Component {
     render() {
         const {loaded, restaurants} = this.state;
 
-       
+        if(!loaded) {
+          return <PreLoader/>  
+        };
 
         if(!restaurants.length){
             return(
