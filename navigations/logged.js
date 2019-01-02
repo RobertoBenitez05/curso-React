@@ -69,7 +69,7 @@ export default DrawerNavigator(
         },
         LogoutScreen:{
             screen: LogoutScreenStack
-        },
+        }
     },
     {
         drawerBackgroundColor: 'rgba(128,35,60,0.7)',
