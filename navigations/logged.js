@@ -52,7 +52,7 @@ const restaurantsScreenStack = StackNavigator(
           screen: AddRestaurantScreen,
           navigationOptions: ({navigation}) => ({
               title: 'Restaurantes',
-              headerRight: rightIcon(navigation, home),
+              headerRight: rightIcon(navigation, 'home'),
               headerLeft: leftIcon(navigation, 'bars')
           })
       }

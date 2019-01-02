@@ -6,8 +6,8 @@ import {ListItems} from "react-native-elements"
 import firebaseConfig from '../../utils/firebase';
 import * as firebase from 'firebase';
 import {NavigationActions} from 'react-navigation';
-import RestaurantEmpty from '../../components/restaurant/RestaurantEmpty'
-import RestaurantAddButton from '../../components/restaurant/RestaurantAddButton'
+import RestaurantEmpty from '../../components/restaurant/RestaurantEmpty';
+import RestaurantAddButton from '../../components/restaurant/RestaurantAddButton';
 
 export default class Restaurants extends Component {
     constructor () {
@@ -45,10 +45,10 @@ export default class Restaurants extends Component {
     }
 
     addRestaurant(){
-        const navigateAction = navigationAction.navigate({
-            routName : 'AddRestaurant'
+        const navigateAction = NavigationActions.navigate({
+            routeName : 'AddRestaurant'
         });
-        this.props.navigattion.dispatch(navigateAction);
+        this.props.navigation.dispatch(navigateAction);
     }
     
     restaurantDetail (restaurant){

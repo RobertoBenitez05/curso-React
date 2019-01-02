@@ -3,9 +3,9 @@ import BackgroundImage from "../../components/BackgroundImage";
 import appButton from "../../components/AppButton";
 import {View, StyleSheet} from 'react-native';
 import * as firebase from 'firebase';
-import {options,restaurant} from '../../forms/restaurant';
+import {options,Restaurant} from '../../forms/restaurant';
 import t  from 'tcomb-form-native';
-import {card} from "react-native-elements";
+import {Card} from "react-native-elements";
 const Form = t.Form;
 import Toast from 'react-native-simple-toast';
 import AppButton from '../../components/AppButton';
@@ -33,16 +33,16 @@ export default class AddRestaurant extends Component{
         const {restaurant} = this.state;
 
         return (
-            <BackgroundImage source = {require ('../../../assets/images/iconoCoco.png')}>
-                <View style = {StyleSheet.container}>
-                    <card title = "formulario de restaurantes chidos">
+            <BackgroundImage source = {require ('../../assets/images/iconoCoco.png')}>
+                <View style = {styles.container}>
+                    <Card title = "formulario de restaurantes chidos">
                         <View>
                             <Form
                                 ref = "form"
                                 type = {Restaurant}
                                 options={options}
                                 value= {restaurant}
-                                onChange= {(v) => this.onChange(V)}
+                                onChange= {(v) => this.onChange(v)}
                             />
                         </View>
                         <AppButton
@@ -53,9 +53,16 @@ export default class AddRestaurant extends Component{
                         iconSize = {30}
                         iconColor = "#fff" 
                         />
-                    </card>
+                    </Card>
                 </View>
             </BackgroundImage>
         )
     }
 }
+
+const styles = StyleSheet.create({
+    container: {
+        backgroundColor: 'rgba(231,228,224,0.8)',
+        padding: 10
+    }
+});
